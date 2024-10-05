@@ -1,10 +1,13 @@
 
 <!DOCTYPE html>
+<?php 
+
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi tiết sản phẩm</title>
+    <title>Sản phẩm</title>
 
    <link rel="stylesheet" href="../trangchu/product.css">
 
@@ -36,7 +39,7 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <?php require("containerctsp.php") ?>
+                <?php require("giohang.php") ?>
                 <!-- /.container-fluid -->
                  <?php require("../trangchu/view/footer.html") ?>
             </div>
@@ -69,10 +72,11 @@
      <script src="../vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="../vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="../js/demo/datatables-demo.js"></script>
+    <!-- Page level custom scripts <script src="../js/demo/datatables-demo.js"></script>-->
+    
     <!-- JS Add product-->
     <script src="../js/demo/popup.js"> </script>
 </div>
+
 </body>
 </html>

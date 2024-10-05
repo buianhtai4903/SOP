@@ -98,6 +98,39 @@
                 }
             }
         }
+
+        public function listblog($sql)
+        {
+            $link = $this->connect();
+            $ketqua = mysqli_query($link, $sql);
+            $i = mysqli_num_rows($ketqua);
+            if($i>0)
+            {
+                while($row = mysqli_fetch_array($ketqua))
+                {
+                    $id_blog = $row['id_blog'];
+                    $tieude_blog = $row['tieude_blog'];
+                    $noidung_blog = $row['noidung_blog'];
+                    $anh1_blog = $row['anh1_blog'];
+                    $anh2_blog = $row['anh2_blog'];
+                    $anh3_blog = $row['anh3_blog'];
+                    echo '<tr>
+                            <td>'.$id_blog.'</td>
+                            <td>'.$tieude_blog.'</td>
+                            <td>'.$noidung_blog.'</td>
+                            <td><img src="../../img/'. $anh1_blog.'"  width="25px"></td>
+                            <td>
+                                 <form action="" method="post">
+                                    <input type="hidden" value="'.$id_blog.'" id="id_blog" name="id_blog">
+                                    <input type="submit" name="btn-xoa" id="btn-xoa" value="Xóa bài" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm" style="background-color: red;">
+                                    <input type="button" value="Sửa" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm" id="btn" style="background-color: green;">
+                                </form>
+                            </tr>';
+                }
+            }
+        }
+
+
         public function uploadfile($name, $tmp_name, $folder)
         {
             $new_name = $folder."/".$name;

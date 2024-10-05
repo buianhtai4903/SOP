@@ -83,6 +83,7 @@ if (isset($_POST["btn"]) && $_POST["btn"] === 'Lưu sản phẩm') {
     }
 }
 
+
 if (isset($_POST["btn-xoa"]) && $_POST["btn-xoa"] === 'Xóa') {
     $id_product = isset($_REQUEST['id_product']) ? $_REQUEST['id_product'] : '';
     

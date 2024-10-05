@@ -65,25 +65,31 @@
                     $price_discount = $row['price_discount'];
                     $img_product = $row['img_product'];
                     echo '<div class="col-2">
-                        <div class="product-card">
+                        <div class="product-card" >
                             <div class="img_product">
                             <form action="" method="get">
                                 <a href="../chitietsanpham/?id='.$id_product.'">
-                                    <img src="../img/'.$img_product.'" id="'.$id_product.'" />
+                                    <img src="../img/'.$img_product.'" id="'.$id_product.'" width="150px" height="150px"/>
                                 </a>
                             </form>
                                 
                             </div>
-                            <div class="name_product">'.$name_product.'</div>
+                            <div class="name_product" >'.$name_product.'</div>
                             <div class="gia_product">'.number_format($price, 0, ',', '.').' VNĐ</div>
                             <div class="giagiam_product">'.number_format($price_discount, 0, ',', '.').' VNĐ</div>
                             <div class="mua">
+                                <a href="../chitietsanpham/?id='.$id_product.'">
                                 <button class="btn-buy">Mua ngay</button>
+                                </a>
                             </div>
                         </div>
                     </div>';
 
                 }
+            }
+            else
+            {
+                echo 'Không tìm thấy sản phẩm!';
             }
         }
 
@@ -106,15 +112,26 @@
                     $price = $row['price'];
                     $price_discount = $row['price_discount'];
                     $img_product = $row['img_product'];
-
+                   
                    echo'
                         <div class="card-body py-3 d-flex">
-                            <img src="../img/'.$img_product.'" alt="Samsung Galaxy S21" width="400px" height="400px">
+                            <img src="../img/'.$img_product.'" width="400px" height="400px">
                             <div class="ml-4 text-dark">
                                 <h3 class="font-weight-bold text-dark">'.$name_product.'</h3>
                                 <p><strong>Nhãn hiệu: </strong>'.$name_brand.'</p>
                                 <p><strong>Giá:</strong> <span class="gia_product">'.number_format($price, 0, ',', '.').' VNĐ</span></p>
                                 <p><strong>Giá giảm:</strong> <span class="giagiam_product">'.number_format($price_discount, 0, ',', '.').' VNĐ</span></p>
+                                <form action="" method="post">
+                                    <input type="hidden" name="id_product" value="'.$id_product.'">
+                                    <input type="hidden" name="id_brand" value="'.$id_brand.'">
+                                    <input type="hidden" name="name_brand" value="'.$name_brand.'">
+                                    <input type="hidden" name="category" value="'.$category.'">
+                                    <input type="hidden" name="name_product" value="'.$name_product.'">
+                                    <input type="hidden" name="price" value="'.$price.'">
+                                    <input type="hidden" name="price_discount" value="'.$price_discount.'">
+                                    <input type="hidden" name="img_product" value="'.$img_product.'">                                
+                                    <input type="submit" id="btn-addcart" name="btn-addcart" class="btn btn-danger" value="Thêm vào giỏ hàng">     
+                                </form> 
                             ';
                 }
             }
@@ -140,7 +157,7 @@
                     $thong_tin_chung = $row['thong_tin_chung'];
                     $img_mota = $row['img_mota'];
 
-                   echo'<p><strong>Màn hình: </strong>'.$man_hinh.' </p>
+                   echo'<p><br/><strong>Màn hình: </strong>'.$man_hinh.' </p>
                     <p><strong>Camera sau: </strong>'.$camera_sau.' </p>
                     <p><strong>Camera trước: </strong>'.$camera_truoc.' </p>
                     <p><strong>Hệ điều hành & Cpu: </strong>'.$he_dieu_hanh_cpu.' </p>
@@ -149,7 +166,6 @@
                     <p ><strong>Pin sạc: </strong>'.$pin_sac.'</p>
                     <p ><strong>Tiện ích: </strong>'.$tien_ich.'</p>
                     <p ><strong>Thông tin chung: </strong>'.$thong_tin_chung.'</p>
-                    <button class="btn btn-primary">Thêm vào giỏ hàng</button>
                     </div>
                     </div>
                     '

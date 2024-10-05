@@ -1,33 +1,31 @@
+                <?php 
+                session_start();
+                if(isset($_SESSION['khdn'])==1)
+                {
+                    $name = 'Xin chào '.$_SESSION['name_cus'];
+                }
+                else 
+                {
+                    $name = null;
+                }
+                ?>
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-primary topbar static-top ">
                      
                 <!-- Topbar Navbar -->
                 <div class="navbar-nav ml-auto">
-                    <img class="img-profile rounded-circle" src="../img/anhthec3.jpg" style="width: 40px; height: 40px;">
+                    <div class="nav-link text-white mr"><strong><?php echo $name ?></strong></div>
                 </div>
-
-
-                     <!-- Topbar Search -->
-                     <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search shadow-sm">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="bạn cần tìm gì..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                        
-                    </form>
-
                     <div class="navbar-nav mr-auto">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="#">Đăng nhập</a>
+                                <a class="nav-link text-white" href="../trangchu/login">Đăng nhập</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-item nav-link text-white" href="#">
+                                <a class="nav-link text-white" href="../trangchu/logout.php">Đăng xuất</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-item nav-link text-white" href="../giohang">
                                     <i class="fas fa-shopping-cart fa-sm text-white mr-1"></i>
                                     Giỏ hàng
                                     <span class="badge bg-danger ml-1">3</span>
@@ -35,46 +33,6 @@
                             </li>
                         </ul>
                     </div>
-
-                    
-
-
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto d-none">
-
-                        <div class="topbar-divider d-none d-sm-block"></div>
-
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Tài Bùi</span>
-                                <img class="img-profile rounded-circle"
-                                    src="../../img/anhthec3.jpg">
-                            </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Đăng xuất
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
                 </nav>
                 <!-- End of Topbar -->
                   <!-- Logout Modal-->

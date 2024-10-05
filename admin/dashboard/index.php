@@ -1,3 +1,4 @@
+<?php require('../confirmlogin.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +18,7 @@
 
     <!-- Custom styles for this template-->
     <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
 
 </head>
 
@@ -40,7 +42,7 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <?php require("../dashboard/content.html") ?>
+                <?php require("../dashboard/content.php") ?>
                 <!-- /.container-fluid -->
 
             </div>
@@ -90,3 +92,4 @@
 </body>
 
 </html>
+<?php require("../controller/ctrlblog.php")?>

@@ -2,7 +2,6 @@
 <!-- Begin Page Content -->
 <div class="container-fluid custom-container">
 
-
 <?php
     include("../admin/controller/clsproductkh.php");
     $productkh = new Clsproductkh();
@@ -20,9 +19,26 @@
                 $productkh->chitietsanpham("SELECT * FROM product WHERE id_product = '$id_product' limit 1");
                 $productkh->thongso("SELECT * FROM product_details_dt WHERE id_product = '$id_product' limit 1");
             ?>
+            <?php
+    
+            if(!isset($_SESSION['cart'])) $_SESSION['cart']=[];
+
+            if(isset($_POST['btn-addcart'])&&($_POST['btn-addcart'])==='Thêm vào giỏ hàng')
+            {
+                $name_product=$_POST['name_product'];
+                $img_product=$_POST['img_product'];
+                $price_discount=$_POST['price_discount'];
+                $id_product=$_POST['id_product'];
+                $cart = [$name_product,$img_product,$price_discount];
+                $_SESSION['cart'][] = $cart;
+                echo '<script>alert("Thêm sản phẩm vào giỏ hàng thành công!");</script>';
+            }
+
+        ?>
         </div>
     </div>
 </div>
-
-
 </div>
+
+
+
