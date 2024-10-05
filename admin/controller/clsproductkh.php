@@ -45,6 +45,7 @@
                 }
             }
         }
+
         public function xuatproductkh($sql)
         {
             $link = $this->connect();
@@ -69,7 +70,7 @@
                             <div class="img_product">
                             <form action="" method="get">
                                 <a href="../chitietsanpham/?id='.$id_product.'">
-                                    <img src="../img/'.$img_product.'" id="'.$id_product.'" width="150px" height="150px"/>
+                                    <img src="../../img/'.$img_product.'" id="'.$id_product.'" width="150px" height="150px"/>
                                 </a>
                             </form>
                                 
@@ -115,7 +116,7 @@
                    
                    echo'
                         <div class="card-body py-3 d-flex">
-                            <img src="../img/'.$img_product.'" width="400px" height="400px">
+                            <img src="../../img/'.$img_product.'" width="400px" height="400px">
                             <div class="ml-4 text-dark">
                                 <h3 class="font-weight-bold text-dark">'.$name_product.'</h3>
                                 <p><strong>Nhãn hiệu: </strong>'.$name_brand.'</p>
@@ -173,6 +174,7 @@
                 }
             }
         }
-    }
+
+}
 
 ?>

@@ -61,8 +61,8 @@ if (isset($_POST["btn"]) && $_POST["btn"] === 'Lưu sản phẩm') {
                         setTimeout(function() {
                             window.location = "../product/"; // Chuyển hướng sau 2 giây
                         }, 500); // Thời gian delay là 500ms
-                      </script>';
-                exit();
+                        </script>';
+                        exit();
                     } else 
                     {
                         echo '<script>alert("Cập nhật thất bại product_details: ' . mysqli_error($link) . '");</script>';
@@ -82,7 +82,6 @@ if (isset($_POST["btn"]) && $_POST["btn"] === 'Lưu sản phẩm') {
 
     }
 }
-
 
 if (isset($_POST["btn-xoa"]) && $_POST["btn-xoa"] === 'Xóa') {
     $id_product = isset($_REQUEST['id_product']) ? $_REQUEST['id_product'] : '';
